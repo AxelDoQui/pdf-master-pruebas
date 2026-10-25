@@ -1,0 +1,42 @@
+name: Contar un fallo
+description: Cuéntanos qué ha pasado en PDF Master
+title: "[Fallo] "
+labels: ["fallo"]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Versión de PDF Master
+      description: Está en «Acerca de» o en el nombre del instalador que descargaste.
+    validations:
+      required: true
+  - type: textarea
+    id: pasos
+    attributes:
+      label: Qué estabas haciendo
+      description: Los pasos, uno por línea, hasta que ocurrió.
+    validations:
+      required: true
+  - type: textarea
+    id: esperado
+    attributes:
+      label: Qué esperabas que pasara
+    validations:
+      required: true
+  - type: textarea
+    id: real
+    attributes:
+      label: Qué pasó en realidad
+      description: Si salió un mensaje, cópialo tal cual. Puedes arrastrar una captura de pantalla.
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: Tu Windows
+      description: Por ejemplo «Windows 11».
+  - type: textarea
+    id: documento
+    attributes:
+      label: Cómo es el PDF
+      description: Páginas aproximadas, si es escaneado, si tiene contraseña o formularios. No adjuntes documentos con datos personales.

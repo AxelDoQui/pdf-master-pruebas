@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PDF Master · versión de pruebas</title>
+<meta name="description" content="Descarga la versión de pruebas de PDF Master para Windows y cuéntanos qué falla.">
+<style>
+  :root { --bg:#f6f7f9; --card:#fff; --text:#1c2230; --dim:#5b6475; --line:#dde1e8; --accent:#2a6df4; --accent-text:#fff; --warn:#fff6e0; --warn-line:#e6c36a; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#14171e; --card:#1d222c; --text:#e8ebf1; --dim:#9aa3b5; --line:#2e3542; --accent:#5b8dff; --accent-text:#0d1220; --warn:#2b2614; --warn-line:#7a6320; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif; }
+  main { max-width: 720px; margin: 0 auto; padding: 40px 16px 64px; }
+  h1 { font-size: 2rem; margin: 0 0 4px; }
+  h2 { font-size: 1.15rem; margin: 0 0 8px; }
+  .lead { color: var(--dim); margin: 0 0 24px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:0 0 16px; }
+  .btn { display:inline-block; background:var(--accent); color:var(--accent-text); text-decoration:none; font-weight:600; padding:12px 22px; border-radius:10px; }
+  .btn:hover, .btn:focus-visible { filter: brightness(1.08); }
+  .btn.alt { background:transparent; color:var(--accent); border:1px solid var(--accent); }
+  .meta { color:var(--dim); font-size:.9rem; margin:10px 0 0; }
+  .warn { background:var(--warn); border-color:var(--warn-line); }
+  ol, ul { margin: 6px 0 0; padding-left: 22px; }
+  li { margin: 4px 0; }
+  code { background: var(--bg); border:1px solid var(--line); border-radius:4px; padding:1px 5px; font-size:.92em; }
+</style>
+</head>
+<body>
+<main>
+  <h1>PDF Master</h1>
+  <p class="lead">Versión de pruebas para Windows. Gracias por ayudar a encontrar lo que falla.</p>
+
+  <section class="card">
+    <h2>Descargar</h2>
+    <p><a class="btn" href="https://github.com/AxelDoQui/pdf-master-pruebas/releases/latest/download/pdf-master-setup.exe">Descargar el instalador</a></p>
+    <p class="meta">Para Windows 10 u 11. Todas las versiones están en <a href="https://github.com/AxelDoQui/pdf-master-pruebas/releases">Releases</a>.</p>
+  </section>
+
+  <section class="card warn">
+    <h2>Windows puede avisarte al instalar</h2>
+    <p>El instalador todavía no tiene firma de editor, así que Windows puede mostrar «Windows protegió su PC». Es normal en una versión de pruebas. Para continuar:</p>
+    <ol>
+      <li>Pulsa <strong>Más información</strong>.</li>
+      <li>Pulsa <strong>Ejecutar de todas formas</strong>.</li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <h2>Qué conviene probar</h2>
+    <ul>
+      <li>Abrir PDFs de verdad: grandes, escaneados, con contraseña, con formularios.</li>
+      <li>Reordenar, girar, borrar, extraer y dividir páginas; unir documentos.</li>
+      <li>Escribir sobre la página, resaltar, dibujar (lápiz, formas) y firmar.</li>
+      <li>Enlaces y marcadores del documento; encabezados, pie y números de página; crear un PDF desde imágenes.</li>
+      <li>Guardar, «Guardar como» e imprimir.</li>
+    </ul>
+    <p class="meta">Prueba con copias de tus PDFs, no con los únicos originales.</p>
+  </section>
+
+  <section class="card">
+    <h2>Contar un fallo</h2>
+    <p>Abre un aviso con el formulario: te pregunta qué hacías, qué esperabas y qué pasó. Hace falta una cuenta gratuita de GitHub.</p>
+    <p><a class="btn alt" href="https://github.com/AxelDoQui/pdf-master-pruebas/issues/new?template=reporte.yml">Contar un fallo</a></p>
+    <p class="meta">No adjuntes PDFs con datos personales. Si el fallo depende de un documento, descríbelo o usa uno de prueba.</p>
+  </section>
+</main>
+</body>
+</html>
