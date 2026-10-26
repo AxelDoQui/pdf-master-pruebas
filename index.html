@@ -5,33 +5,69 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PDF Master · versión de pruebas</title>
 <meta name="description" content="Descarga la versión de pruebas de PDF Master para Windows y cuéntanos qué falla.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230e5a4a'/%3E%3Cpath d='M10 6h8l5 5v15H10z' fill='%23fff'/%3E%3Cpath d='M18 6v5h5z' fill='%239fc4b7'/%3E%3C/svg%3E">
 <style>
-  :root { --bg:#f6f7f9; --card:#fff; --text:#1c2230; --dim:#5b6475; --line:#dde1e8; --accent:#2a6df4; --accent-text:#fff; --warn:#fff6e0; --warn-line:#e6c36a; }
+  :root {
+    --bg:#eef1ef; --surface:#fff; --surface2:#f4f6f5; --ink:#14211d; --sub:#5a6a64; --line:#dde4e1;
+    --marca:#0e5a4a; --marca-ink:#fff; --marca-tinte:#e2efea; --marca-txt:#0b4d3f;
+    --hero:#0e4a3d; --hero2:#0a3a30; --hero-txt:#e7f3ee; --hero-sub:#9fc4b7;
+    --rojo:#b42318; --rojo-bg:#fdecea; --verde:#167a3d; --verde-bg:#e4f4e9; --naranja:#9a5300; --naranja-bg:#fff2d9;
+    --campo:#879790; color-scheme: light;
+  }
   @media (prefers-color-scheme: dark) {
-    :root { --bg:#14171e; --card:#1d222c; --text:#e8ebf1; --dim:#9aa3b5; --line:#2e3542; --accent:#5b8dff; --accent-text:#0d1220; --warn:#2b2614; --warn-line:#7a6320; }
+    :root {
+      --bg:#0e1412; --surface:#161e1b; --surface2:#1d2723; --ink:#e4ebe8; --sub:#93a39d; --line:#27322e;
+      --marca:#3aa886; --marca-ink:#06231b; --marca-tinte:#16362d; --marca-txt:#7fd3b6;
+      --hero:#123d33; --hero2:#0d2e27; --hero-txt:#e7f3ee; --hero-sub:#8fb8aa;
+      --rojo:#ff8a7e; --rojo-bg:#3a1714; --verde:#6fd394; --verde-bg:#13301f; --naranja:#f2b55a; --naranja-bg:#33250c;
+      --campo:#4b5c55; color-scheme: dark;
+    }
   }
   * { box-sizing: border-box; }
-  body { margin:0; background:var(--bg); color:var(--text); font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif; }
-  main { max-width: 720px; margin: 0 auto; padding: 40px 16px 64px; }
-  h1 { font-size: 2rem; margin: 0 0 4px; }
-  h2 { font-size: 1.15rem; margin: 0 0 8px; }
-  .lead { color: var(--dim); margin: 0 0 24px; }
-  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin:0 0 16px; }
-  .btn { display:inline-block; background:var(--accent); color:var(--accent-text); text-decoration:none; font-weight:600; padding:12px 22px; border-radius:10px; }
-  .btn:hover, .btn:focus-visible { filter: brightness(1.08); }
-  .btn.alt { background:transparent; color:var(--accent); border:1px solid var(--accent); }
-  .meta { color:var(--dim); font-size:.9rem; margin:10px 0 0; }
-  .warn { background:var(--warn); border-color:var(--warn-line); }
-  ol, ul { margin: 6px 0 0; padding-left: 22px; }
-  li { margin: 4px 0; }
-  code { background: var(--bg); border:1px solid var(--line); border-radius:4px; padding:1px 5px; font-size:.92em; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif; }
+  a { color:var(--marca-txt); }
+  .hero { background:linear-gradient(135deg,var(--hero),var(--hero2)); color:var(--hero-txt); }
+  .hero > div { max-width:720px; margin:0 auto; padding:40px 16px 36px; }
+  .marca { display:flex; align-items:center; gap:14px; }
+  .marca svg { flex:none; }
+  h1 { font-size:2rem; line-height:1.15; margin:0; }
+  .lead { color:var(--hero-sub); margin:10px 0 0; }
+  main { max-width:720px; margin:0 auto; padding:24px 16px 64px; }
+  h2 { font-size:1.15rem; margin:0 0 8px; }
+  .card { background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:20px; margin:0 0 16px; }
+  .btn { display:inline-block; background:var(--marca); color:var(--marca-ink); text-decoration:none; font:inherit; font-weight:600; padding:12px 22px; border-radius:10px; border:0; cursor:pointer; }
+  .btn:hover { filter:brightness(1.1); }
+  .btn:focus-visible, input:focus-visible, textarea:focus-visible, a:focus-visible { outline:3px solid var(--marca-txt); outline-offset:2px; }
+  .btn[disabled] { opacity:.6; cursor:wait; }
+  .meta { color:var(--sub); font-size:.9rem; margin:10px 0 0; }
+  .warn { background:var(--naranja-bg); border-color:var(--naranja); }
+  ol, ul { margin:6px 0 0; padding-left:22px; }
+  li { margin:4px 0; }
+  form label { display:block; font-weight:600; margin:14px 0 4px; }
+  form label small { font-weight:400; color:var(--sub); }
+  input[type=text], input[type=email], textarea { width:100%; font:inherit; color:var(--ink); background:var(--surface2); border:1px solid var(--campo); border-radius:8px; padding:9px 11px; }
+  textarea { min-height:84px; resize:vertical; }
+  .trampa { position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
+  #estado { margin:14px 0 0; padding:10px 12px; border-radius:8px; display:none; }
+  #estado.ok { display:block; background:var(--verde-bg); color:var(--verde); }
+  #estado.mal { display:block; background:var(--rojo-bg); color:var(--rojo); }
 </style>
 </head>
 <body>
-<main>
-  <h1>PDF Master</h1>
+<header class="hero"><div>
+  <div class="marca">
+    <svg width="52" height="52" viewBox="0 0 32 32" role="img" aria-label="Logo de PDF Master">
+      <rect width="32" height="32" rx="8" fill="#e7f3ee"/>
+      <path d="M10 6h8l5 5v15H10z" fill="#0e5a4a"/>
+      <path d="M18 6v5h5z" fill="#9fc4b7"/>
+      <path d="M13 17h7M13 20.5h7" stroke="#e7f3ee" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <h1>PDF Master</h1>
+  </div>
   <p class="lead">Versión de pruebas para Windows. Gracias por ayudar a encontrar lo que falla.</p>
+</div></header>
 
+<main>
   <section class="card">
     <h2>Descargar</h2>
     <p><a class="btn" href="https://github.com/AxelDoQui/pdf-master-pruebas/releases/latest/download/pdf-master-setup.exe">Descargar el instalador</a></p>
@@ -54,17 +90,69 @@
       <li>Reordenar, girar, borrar, extraer y dividir páginas; unir documentos.</li>
       <li>Escribir sobre la página, resaltar, dibujar (lápiz, formas) y firmar.</li>
       <li>Enlaces y marcadores del documento; encabezados, pie y números de página; crear un PDF desde imágenes.</li>
+      <li>Tachar información (buscar datos personales) y limpiar la información oculta.</li>
       <li>Guardar, «Guardar como» e imprimir.</li>
     </ul>
     <p class="meta">Prueba con copias de tus PDFs, no con los únicos originales.</p>
   </section>
 
-  <section class="card">
+  <section class="card" id="reporte">
     <h2>Contar un fallo</h2>
-    <p>Abre un aviso con el formulario: te pregunta qué hacías, qué esperabas y qué pasó. Hace falta una cuenta gratuita de GitHub.</p>
-    <p><a class="btn alt" href="https://github.com/AxelDoQui/pdf-master-pruebas/issues/new?template=reporte.yml">Contar un fallo</a></p>
-    <p class="meta">No adjuntes PDFs con datos personales. Si el fallo depende de un documento, descríbelo o usa uno de prueba.</p>
+    <p>Rellena el formulario y me llega directamente. No necesitas ninguna cuenta.</p>
+    <form id="form" novalidate>
+      <label for="version">Versión de PDF Master <small>(está en el nombre del instalador)</small></label>
+      <input type="text" id="version" name="version" maxlength="40" required autocomplete="off">
+      <label for="pasos">Qué estabas haciendo <small>(los pasos, uno por línea)</small></label>
+      <textarea id="pasos" name="pasos" maxlength="3000" required></textarea>
+      <label for="esperado">Qué esperabas que pasara</label>
+      <textarea id="esperado" name="esperado" maxlength="2000" required></textarea>
+      <label for="real">Qué pasó en realidad <small>(si salió un mensaje, cópialo tal cual)</small></label>
+      <textarea id="real" name="real" maxlength="3000" required></textarea>
+      <label for="windows">Tu Windows <small>(opcional, por ejemplo «Windows 11»)</small></label>
+      <input type="text" id="windows" name="windows" maxlength="60">
+      <label for="documento">Cómo es el PDF <small>(opcional: páginas, escaneado, contraseña, formularios)</small></label>
+      <textarea id="documento" name="documento" maxlength="1000"></textarea>
+      <label for="contacto">Tu correo <small>(opcional, solo si quieres que te responda)</small></label>
+      <input type="email" id="contacto" name="contacto" maxlength="120" autocomplete="email">
+      <div class="trampa" aria-hidden="true"><label>No rellenar <input type="text" name="web" tabindex="-1" autocomplete="off"></label></div>
+      <p style="margin-top:18px"><button class="btn" type="submit" id="enviar">Enviar el aviso</button></p>
+      <p id="estado" role="status"></p>
+    </form>
+    <p class="meta">No adjuntes ni pegues datos personales de los PDFs. Si el fallo depende de un documento, descríbelo o usa uno de prueba.</p>
+    <p class="meta">¿Prefieres GitHub? <a href="https://github.com/AxelDoQui/pdf-master-pruebas/issues/new?template=reporte.yml">Abre un aviso allí</a> (hace falta cuenta gratuita).</p>
   </section>
 </main>
+
+<script>
+  // La dirección del script de Google que recibe los avisos. Vacía = el formulario remite a GitHub.
+  const ENDPOINT = "";
+
+  const form = document.getElementById("form");
+  const estado = document.getElementById("estado");
+  const boton = document.getElementById("enviar");
+  const aviso = (clase, texto) => { estado.className = clase; estado.textContent = texto; };
+
+  form.addEventListener("submit", async (ev) => {
+    ev.preventDefault();
+    const datos = Object.fromEntries(new FormData(form));
+    for (const k of ["version", "pasos", "esperado", "real"]) {
+      if (!String(datos[k] || "").trim()) { aviso("mal", "Faltan campos obligatorios: rellena los que no son opcionales."); form.elements[k].focus(); return; }
+    }
+    if (datos.web) { aviso("ok", "Gracias, aviso enviado."); return; }
+    if (!ENDPOINT) { aviso("mal", "El envío directo todavía no está activado. Usa el aviso de GitHub de abajo."); return; }
+    boton.disabled = true;
+    aviso("", "");
+    try {
+      // text/plain evita la comprobación previa del navegador, que Apps Script no contesta.
+      await fetch(ENDPOINT, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(datos) });
+      form.reset();
+      aviso("ok", "Gracias, aviso enviado.");
+    } catch {
+      aviso("mal", "No se pudo enviar. Revisa tu conexión e inténtalo de nuevo, o usa el aviso de GitHub.");
+    } finally {
+      boton.disabled = false;
+    }
+  });
+</script>
 </body>
 </html>
