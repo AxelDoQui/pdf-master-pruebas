@@ -5,31 +5,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PDF Master · versión de pruebas</title>
 <meta name="description" content="Descarga la versión de pruebas de PDF Master para Windows y cuéntanos qué falla.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230e5a4a'/%3E%3Cpath d='M10 6h8l5 5v15H10z' fill='%23fff'/%3E%3Cpath d='M18 6v5h5z' fill='%239fc4b7'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="favicon.png">
 <style>
   :root {
-    --bg:#eef1ef; --surface:#fff; --surface2:#f4f6f5; --ink:#14211d; --sub:#5a6a64; --line:#dde4e1;
-    --marca:#0e5a4a; --marca-ink:#fff; --marca-tinte:#e2efea; --marca-txt:#0b4d3f;
-    --hero:#0e4a3d; --hero2:#0a3a30; --hero-txt:#e7f3ee; --hero-sub:#9fc4b7;
-    --rojo:#b42318; --rojo-bg:#fdecea; --verde:#167a3d; --verde-bg:#e4f4e9; --naranja:#9a5300; --naranja-bg:#fff2d9;
-    --campo:#879790; color-scheme: light;
+    --bg:#f1eee7; --surface:#fff; --surface2:#f7f5f0; --ink:#0f2027; --sub:#4d5f66; --line:#d9d4c7;
+    --marca:#e8a317; --marca-ink:#0f2027; --enlace:#0f4a5e;
+    --hero:#0f2027; --hero2:#16303a; --hero-txt:#eaf0f1; --hero-sub:#8fa6ae;
+    --rojo:#b42318; --rojo-bg:#fdecea; --verde:#167a3d; --verde-bg:#e4f4e9; --naranja:#7a4b00; --naranja-bg:#fff2d9; --naranja-line:#e0b04a;
+    --campo:#8a948f; color-scheme: light;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg:#0e1412; --surface:#161e1b; --surface2:#1d2723; --ink:#e4ebe8; --sub:#93a39d; --line:#27322e;
-      --marca:#3aa886; --marca-ink:#06231b; --marca-tinte:#16362d; --marca-txt:#7fd3b6;
-      --hero:#123d33; --hero2:#0d2e27; --hero-txt:#e7f3ee; --hero-sub:#8fb8aa;
-      --rojo:#ff8a7e; --rojo-bg:#3a1714; --verde:#6fd394; --verde-bg:#13301f; --naranja:#f2b55a; --naranja-bg:#33250c;
-      --campo:#4b5c55; color-scheme: dark;
+      --bg:#0b161b; --surface:#16303a; --surface2:#10252d; --ink:#eaf0f1; --sub:#9db3ba; --line:#274753;
+      --marca:#e8a317; --marca-ink:#0f2027; --enlace:#f0bd4c;
+      --hero:#0f2027; --hero2:#16303a; --hero-txt:#eaf0f1; --hero-sub:#8fa6ae;
+      --rojo:#ff8a7e; --rojo-bg:#3a1714; --verde:#6fd394; --verde-bg:#13301f; --naranja:#f2b55a; --naranja-bg:#33250c; --naranja-line:#7a6320;
+      --campo:#4b6a76; color-scheme: dark;
     }
   }
   * { box-sizing: border-box; }
   body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif; }
-  a { color:var(--marca-txt); }
+  a { color:var(--enlace); }
   .hero { background:linear-gradient(135deg,var(--hero),var(--hero2)); color:var(--hero-txt); }
   .hero > div { max-width:720px; margin:0 auto; padding:40px 16px 36px; }
   .marca { display:flex; align-items:center; gap:14px; }
-  .marca svg { flex:none; }
+  .marca img { flex:none; }
   h1 { font-size:2rem; line-height:1.15; margin:0; }
   .lead { color:var(--hero-sub); margin:10px 0 0; }
   main { max-width:720px; margin:0 auto; padding:24px 16px 64px; }
@@ -37,10 +37,11 @@
   .card { background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:20px; margin:0 0 16px; }
   .btn { display:inline-block; background:var(--marca); color:var(--marca-ink); text-decoration:none; font:inherit; font-weight:600; padding:12px 22px; border-radius:10px; border:0; cursor:pointer; }
   .btn:hover { filter:brightness(1.1); }
-  .btn:focus-visible, input:focus-visible, textarea:focus-visible, a:focus-visible { outline:3px solid var(--marca-txt); outline-offset:2px; }
+  .btn:focus-visible, input:focus-visible, textarea:focus-visible, a:focus-visible { outline:3px solid var(--marca); outline-offset:2px; }
   .btn[disabled] { opacity:.6; cursor:wait; }
   .meta { color:var(--sub); font-size:.9rem; margin:10px 0 0; }
-  .warn { background:var(--naranja-bg); border-color:var(--naranja); }
+  .warn { background:var(--naranja-bg); border-color:var(--naranja-line); }
+  .warn h2, .warn p { color:var(--naranja); }
   ol, ul { margin:6px 0 0; padding-left:22px; }
   li { margin:4px 0; }
   form label { display:block; font-weight:600; margin:14px 0 4px; }
@@ -56,12 +57,7 @@
 <body>
 <header class="hero"><div>
   <div class="marca">
-    <svg width="52" height="52" viewBox="0 0 32 32" role="img" aria-label="Logo de PDF Master">
-      <rect width="32" height="32" rx="8" fill="#e7f3ee"/>
-      <path d="M10 6h8l5 5v15H10z" fill="#0e5a4a"/>
-      <path d="M18 6v5h5z" fill="#9fc4b7"/>
-      <path d="M13 17h7M13 20.5h7" stroke="#e7f3ee" stroke-width="1.6" stroke-linecap="round"/>
-    </svg>
+    <img src="logo.png" width="56" height="56" alt="Logo de PDF Master">
     <h1>PDF Master</h1>
   </div>
   <p class="lead">Versión de pruebas para Windows. Gracias por ayudar a encontrar lo que falla.</p>
