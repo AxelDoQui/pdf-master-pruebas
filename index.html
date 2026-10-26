@@ -27,12 +27,17 @@
   body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif; }
   a { color:var(--enlace); }
   .hero { background:linear-gradient(135deg,var(--hero),var(--hero2)); color:var(--hero-txt); }
-  .hero > div { max-width:720px; margin:0 auto; padding:40px 16px 36px; }
+  .hero > div { max-width:1200px; margin:0 auto; padding:40px 16px 36px; }
   .marca { display:flex; align-items:center; gap:14px; }
   .marca img { flex:none; }
   h1 { font-size:2rem; line-height:1.15; margin:0; }
   .lead { color:var(--hero-sub); margin:10px 0 0; }
-  main { max-width:720px; margin:0 auto; padding:24px 16px 64px; }
+  main { max-width:1200px; margin:0 auto; padding:24px 16px 64px; display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); gap:16px; align-items:start; }
+  main > .card { margin:0; }
+  .c4 { grid-column:span 4; } .c5 { grid-column:span 5; } .c6 { grid-column:span 6; } .c7 { grid-column:span 7; } .c8 { grid-column:span 8; } .c12 { grid-column:1 / -1; }
+  .dos { display:grid; grid-template-columns:minmax(0,5fr) minmax(0,7fr); gap:32px; align-items:start; }
+  .sticky { position:sticky; top:16px; }
+  @media (max-width:900px) { main > .card { grid-column:1 / -1; } .dos { grid-template-columns:1fr; gap:8px; } .sticky { position:static; } }
   h2 { font-size:1.15rem; margin:0 0 8px; }
   .card { background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:20px; margin:0 0 16px; }
   .btn { display:inline-block; background:var(--marca); color:var(--marca-ink); text-decoration:none; font:inherit; font-weight:600; padding:12px 22px; border-radius:10px; border:0; cursor:pointer; }
@@ -48,7 +53,7 @@
   form label small { font-weight:400; color:var(--sub); }
   input[type=text], input[type=email], textarea { width:100%; font:inherit; color:var(--ink); background:var(--surface2); border:1px solid var(--campo); border-radius:8px; padding:9px 11px; }
   textarea { min-height:84px; resize:vertical; }
-  .grupos { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:14px; margin-top:8px; }
+  .grupos { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px 28px; margin-top:12px; }
   .grupos h3 { font-size:1rem; margin:0 0 4px; }
   .grupos ul { margin:0; padding-left:20px; font-size:.95rem; }
   .version { border-top:1px solid var(--line); padding:12px 0 0; margin-top:12px; }
@@ -72,13 +77,13 @@
 </div></header>
 
 <main>
-  <section class="card">
+  <section class="card c5">
     <h2>Descargar</h2>
     <p><a class="btn" href="https://github.com/AxelDoQui/pdf-master-pruebas/releases/latest/download/pdf-master-setup.exe">Descargar el instalador</a></p>
     <p class="meta">Para Windows 10 u 11. Todas las versiones están en <a href="https://github.com/AxelDoQui/pdf-master-pruebas/releases">Releases</a>.</p>
   </section>
 
-  <section class="card warn">
+  <section class="card warn c7">
     <h2>Windows puede avisarte al instalar</h2>
     <p>El instalador todavía no tiene firma de editor, así que Windows puede mostrar «Windows protegió su PC». Es normal en una versión de pruebas. Para continuar:</p>
     <ol>
@@ -87,7 +92,7 @@
     </ol>
   </section>
 
-  <section class="card" id="funciones">
+  <section class="card c12" id="funciones">
     <h2>Qué hace la app</h2>
     <p>PDF Master es un visor y editor de PDF para Windows. Todo se hace en tu equipo: los documentos no se suben a ningún sitio.</p>
     <div class="grupos">
@@ -126,7 +131,7 @@
     </div>
   </section>
 
-  <section class="card">
+  <section class="card c5">
     <h2>Qué conviene probar</h2>
     <ul>
       <li>Abrir PDFs de verdad: grandes, escaneados, con contraseña, con formularios.</li>
@@ -139,7 +144,7 @@
     <p class="meta">Prueba con copias de tus PDFs, no con los únicos originales.</p>
   </section>
 
-  <section class="card" id="versiones">
+  <section class="card c7" id="versiones">
     <h2>Historial de versiones</h2>
     <div class="version"><h3>0.24.0<span>26 oct 2026</span></h3><p>«Limpiar información oculta»: muestra y quita los datos del documento (autor, título), archivos adjuntos, comentarios y código JavaScript. Guarda con otro nombre para conservar el original.</p></div>
     <div class="version"><h3>0.23.0<span>25 oct 2026</span></h3><p>Buscar datos personales (correos, teléfonos, DNI/NIE, IBAN, tarjetas) o textos y marcarlos para tachar. Tú revisas las marcas y las aplicas.</p></div>
@@ -148,9 +153,15 @@
     <div class="version"><h3>0.20.0<span>25 oct 2026</span></h3><p>Primera versión de pruebas: enlaces y marcadores del documento, dibujo (lápiz, línea, rectángulo, elipse y goma), dividir y extraer por rangos, encabezado, pie, números de página y marca de agua, crear PDF desde imágenes y ver firmas existentes.</p></div>
   </section>
 
-  <section class="card" id="reporte">
-    <h2>Contar un fallo</h2>
-    <p>Rellena el formulario y me llega directamente. No necesitas ninguna cuenta.</p>
+  <section class="card c12" id="reporte">
+    <div class="dos">
+      <div class="sticky">
+        <h2>Contar un fallo</h2>
+        <p>Rellena el formulario y me llega directamente. No necesitas ninguna cuenta.</p>
+      <p class="meta">No adjuntes ni pegues datos personales de los PDFs. Si el fallo depende de un documento, descríbelo o usa uno de prueba.</p>
+      <p class="meta">¿Prefieres GitHub? <a href="https://github.com/AxelDoQui/pdf-master-pruebas/issues/new?template=reporte.yml">Abre un aviso allí</a> (hace falta cuenta gratuita).</p>
+      </div>
+      <div>
     <form id="form" novalidate>
       <label for="version">Versión de PDF Master <small>(está en el nombre del instalador)</small></label>
       <input type="text" id="version" name="version" maxlength="40" required autocomplete="off">
@@ -170,8 +181,8 @@
       <p style="margin-top:18px"><button class="btn" type="submit" id="enviar">Enviar el aviso</button></p>
       <p id="estado" role="status"></p>
     </form>
-    <p class="meta">No adjuntes ni pegues datos personales de los PDFs. Si el fallo depende de un documento, descríbelo o usa uno de prueba.</p>
-    <p class="meta">¿Prefieres GitHub? <a href="https://github.com/AxelDoQui/pdf-master-pruebas/issues/new?template=reporte.yml">Abre un aviso allí</a> (hace falta cuenta gratuita).</p>
+      </div>
+    </div>
   </section>
 </main>
 
