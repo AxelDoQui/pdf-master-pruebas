@@ -48,6 +48,14 @@
   form label small { font-weight:400; color:var(--sub); }
   input[type=text], input[type=email], textarea { width:100%; font:inherit; color:var(--ink); background:var(--surface2); border:1px solid var(--campo); border-radius:8px; padding:9px 11px; }
   textarea { min-height:84px; resize:vertical; }
+  .grupos { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:14px; margin-top:8px; }
+  .grupos h3 { font-size:1rem; margin:0 0 4px; }
+  .grupos ul { margin:0; padding-left:20px; font-size:.95rem; }
+  .version { border-top:1px solid var(--line); padding:12px 0 0; margin-top:12px; }
+  .version:first-of-type { border-top:0; margin-top:0; padding-top:0; }
+  .version h3 { font-size:1rem; margin:0; }
+  .version h3 span { color:var(--sub); font-weight:400; font-size:.88rem; margin-left:6px; }
+  .version p { margin:4px 0 0; }
   .trampa { position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
   #estado { margin:14px 0 0; padding:10px 12px; border-radius:8px; display:none; }
   #estado.ok { display:block; background:var(--verde-bg); color:var(--verde); }
@@ -79,6 +87,45 @@
     </ol>
   </section>
 
+  <section class="card" id="funciones">
+    <h2>Qué hace la app</h2>
+    <p>PDF Master es un visor y editor de PDF para Windows. Todo se hace en tu equipo: los documentos no se suben a ningún sitio.</p>
+    <div class="grupos">
+      <div><h3>Ver y navegar</h3><ul>
+        <li>Abrir, zoom y ajuste a la página</li>
+        <li>Miniaturas, marcadores y enlaces del documento</li>
+        <li>Buscar texto</li>
+        <li>Imprimir</li></ul></div>
+      <div><h3>Páginas</h3><ul>
+        <li>Reordenar arrastrando, girar y borrar</li>
+        <li>Insertar página en blanco y recortar márgenes</li>
+        <li>Unir documentos, dividir y extraer por rangos</li>
+        <li>Exportar páginas como imágenes PNG o JPG</li>
+        <li>Crear un PDF desde imágenes</li></ul></div>
+      <div><h3>Escribir y anotar</h3><ul>
+        <li>Texto sobre la página y notas</li>
+        <li>Resaltar, subrayar y tachar</li>
+        <li>Dibujo libre, líneas, rectángulos y elipses</li>
+        <li>Sellos (APROBADO, CONFIDENCIAL, fecha…)</li>
+        <li>Rellenar formularios</li>
+        <li>Deshacer</li></ul></div>
+      <div><h3>Firmar</h3><ul>
+        <li>Firma dibujada, escrita o con imagen</li>
+        <li>Firma digital con certificado y sello de tiempo</li>
+        <li>Varias firmas en un documento</li>
+        <li>Ver y validar las firmas existentes</li></ul></div>
+      <div><h3>Proteger y limpiar</h3><ul>
+        <li>Contraseña para abrir y restricciones</li>
+        <li>Abrir PDFs protegidos</li>
+        <li>Tachado permanente, también buscando datos personales</li>
+        <li>Limpiar información oculta (autor, adjuntos, comentarios, scripts)</li></ul></div>
+      <div><h3>Documento</h3><ul>
+        <li>Encabezado, pie, números de página y marca de agua</li>
+        <li>Comprimir el archivo</li>
+        <li>Reconocimiento de texto (OCR) en escaneados</li></ul></div>
+    </div>
+  </section>
+
   <section class="card">
     <h2>Qué conviene probar</h2>
     <ul>
@@ -90,6 +137,15 @@
       <li>Guardar, «Guardar como» e imprimir.</li>
     </ul>
     <p class="meta">Prueba con copias de tus PDFs, no con los únicos originales.</p>
+  </section>
+
+  <section class="card" id="versiones">
+    <h2>Historial de versiones</h2>
+    <div class="version"><h3>0.24.0<span>26 oct 2026</span></h3><p>«Limpiar información oculta»: muestra y quita los datos del documento (autor, título), archivos adjuntos, comentarios y código JavaScript. Guarda con otro nombre para conservar el original.</p></div>
+    <div class="version"><h3>0.23.0<span>25 oct 2026</span></h3><p>Buscar datos personales (correos, teléfonos, DNI/NIE, IBAN, tarjetas) o textos y marcarlos para tachar. Tú revisas las marcas y las aplicas.</p></div>
+    <div class="version"><h3>0.22.0<span>25 oct 2026</span></h3><p>Sellos listos para colocar: APROBADO, RECHAZADO, REVISADO, CONFIDENCIAL, BORRADOR, COPIA, URGENTE y la fecha de hoy.</p></div>
+    <div class="version"><h3>0.21.0<span>25 oct 2026</span></h3><p>Insertar página en blanco, recortar márgenes de las páginas y exportar páginas como imágenes PNG o JPG.</p></div>
+    <div class="version"><h3>0.20.0<span>25 oct 2026</span></h3><p>Primera versión de pruebas: enlaces y marcadores del documento, dibujo (lápiz, línea, rectángulo, elipse y goma), dividir y extraer por rangos, encabezado, pie, números de página y marca de agua, crear PDF desde imágenes y ver firmas existentes.</p></div>
   </section>
 
   <section class="card" id="reporte">
